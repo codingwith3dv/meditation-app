@@ -75,13 +75,13 @@ export class BreathSound {
 		// Create a biquad filter to shape the breath sound
 		const biquadFilter = this.context.createBiquadFilter();
 		biquadFilter.type = 'bandpass';
-		biquadFilter.frequency.value = type === 'inhale' ? 1000 : 500; // Higher frequency for inhale, lower for exhale
+		biquadFilter.frequency.value = type === 'inhale' ? 5000 : 2000; // Higher frequency for inhale, lower for exhale
 		biquadFilter.Q.value = 2; // Adjust Q factor for a smoother filter response
 
 		// Gain node for volume control
 		const gainNode = this.context.createGain();
-		gainNode.gain.setValueAtTime(5, this.context.currentTime); // Start with lower volume
-		gainNode.gain.exponentialRampToValueAtTime(0.001, this.context.currentTime + duration / 1000); // Fade out
+		gainNode.gain.setValueAtTime(25, this.context.currentTime); // Start with lower volume
+		gainNode.gain.linearRampToValueAtTime(0.001, this.context.currentTime + duration / 1000); // Fade out
 
 		// Connect nodes
 		breathSource.connect(biquadFilter);
