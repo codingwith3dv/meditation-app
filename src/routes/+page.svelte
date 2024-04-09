@@ -62,7 +62,7 @@
 					</button>
 				{/each}
 
-				<div class="px-4 py-1 text-black/60 grow grid items-end">Select a method to play</div>
+				<div class="px-4 py-1 text-black/60 grow grid items-end">Select a method to start</div>
 			</div>
 		</div>
 		<Cell {inhale} {exhale} {pause} {endPause} {isPlaying}></Cell>
