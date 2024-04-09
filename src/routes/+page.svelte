@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 	import Cell from './Cell.svelte';
+	import { dev } from '$app/environment';
 
 	const inhale = writable(4);
 	const pause = writable(7);
@@ -20,10 +21,14 @@
 			name: 'Box breath',
 			timing: [4, 4, 4, 4]
 		},
-		{
-			name: 'Test',
-			timing: [1, 0, 1, 0]
-		}
+		...(dev
+			? [
+					{
+						name: 'Test',
+						timing: [1, 0, 1, 0]
+					}
+				]
+			: [])
 	];
 </script>
 
