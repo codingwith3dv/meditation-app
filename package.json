@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"posthog-js": "^1.120.3",
 		"preline": "^2.1.0"
 	}
 }
