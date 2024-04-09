@@ -81,7 +81,7 @@ export class BreathSound {
 		// Gain node for volume control
 		const gainNode = this.context.createGain();
 		gainNode.gain.setValueAtTime(25, this.context.currentTime); // Start with lower volume
-		gainNode.gain.linearRampToValueAtTime(0.001, this.context.currentTime + duration / 1000); // Fade out
+		gainNode.gain.exponentialRampToValueAtTime(0.001, this.context.currentTime + duration / 1000); // Fade out
 
 		// Connect nodes
 		breathSource.connect(biquadFilter);
