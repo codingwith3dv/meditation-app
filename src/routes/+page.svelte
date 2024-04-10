@@ -44,15 +44,15 @@
 	</div>
 
 	<div
-		class="-translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[80] bg-white border-e dark:bg-gray-800 dark:border-gray-700"
+		class="-translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[80] bg-white border-e"
 		tabindex="-1"
 		class:translate-x-0={$isOverlayOpen}
 	>
-		<div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
-			<h3 class="font-bold text-gray-800 dark:text-white">Choose method</h3>
+		<div class="flex justify-between items-center py-3 px-4 border-b">
+			<h3 class="font-bold text-gray-800">Choose method</h3>
 			<button
 				type="button"
-				class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700"
+				class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 				on:click={() => {
 					$isOverlayOpen = false;
 				}}
@@ -79,25 +79,25 @@
 		<div class="grid md:grid-cols-2 xl:grid-cols-4 md:gap-6 rounded-lg !overflow-hidden">
 			<!-- Inhale -->
 			<div
-				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
+				class="bg-white border border-gray-200 md:rounded-lg"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
+						<span class="block text-gray-500 text-sm md:text-base">
 							Inhale ( seconds )
 						</span>
 						<input
-							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0 dark:text-white"
+							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$inhale}
 						/>
 					</div>
 					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								if ($inhale >= 1) $inhale = $inhale - step;
 							}}
@@ -106,7 +106,7 @@
 						</button>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								$inhale = $inhale + step;
 							}}
@@ -118,25 +118,25 @@
 			</div>
 			<!-- Inhale pause -->
 			<div
-				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
+				class="bg-white border border-gray-200 md:rounded-lg"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
+						<span class="block text-gray-500 text-sm md:text-base">
 							Pause after inhale ( seconds )
 						</span>
 						<input
-							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0 dark:text-white"
+							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$pause}
 						/>
 					</div>
 					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								if ($pause > 0) $pause = $pause - step;
 							}}
@@ -145,7 +145,7 @@
 						</button>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								$pause = $pause + step;
 							}}
@@ -157,25 +157,25 @@
 			</div>
 			<!-- Exhale -->
 			<div
-				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
+				class="bg-white border border-gray-200 md:rounded-lg"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
+						<span class="block text-gray-500 text-sm md:text-base">
 							Exhale ( seconds )
 						</span>
 						<input
-							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0 dark:text-white"
+							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$exhale}
 						/>
 					</div>
 					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								if ($exhale >= 1) $exhale = $exhale - step;
 							}}
@@ -184,7 +184,7 @@
 						</button>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								$exhale = $exhale + step;
 							}}
@@ -196,25 +196,25 @@
 			</div>
 			<!-- Exhale pause -->
 			<div
-				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
+				class="bg-white border border-gray-200 md:rounded-lg"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
+						<span class="block text-gray-500 text-sm md:text-base">
 							Pause after exhale ( seconds )
 						</span>
 						<input
-							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0 dark:text-white"
+							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$endPause}
 						/>
 					</div>
 					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								if ($endPause > 0) $endPause = $endPause - step;
 							}}
@@ -223,7 +223,7 @@
 						</button>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
 							on:click={() => {
 								$endPause = $endPause + step;
 							}}
