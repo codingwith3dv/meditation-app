@@ -53,7 +53,9 @@
 			<button
 				type="button"
 				class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700"
-				data-hs-overlay="#hs-overlay-example"
+				on:click={() => {
+					$isOverlayOpen = false;
+				}}
 			>
 				<span class="sr-only">Close modal</span>
 				<i class="ph ph-x grid place-items-center align-middle text-xl"></i>
@@ -74,13 +76,13 @@
 		>
 			Choose method
 		</button>
-		<div class="grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 rounded-lg !overflow-hidden">
+		<div class="grid md:grid-cols-2 xl:grid-cols-4 md:gap-6 rounded-lg !overflow-hidden">
 			<!-- Inhale -->
 			<div
 				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
-					<div class="grow py-2 px-3">
+					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
 							Inhale ( seconds )
 						</span>
@@ -95,7 +97,7 @@
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
 							on:click={() => {
 								if ($inhale >= 1) $inhale = $inhale - step;
 							}}
@@ -119,7 +121,7 @@
 				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
-					<div class="grow py-2 px-3">
+					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
 							Pause after inhale ( seconds )
 						</span>
@@ -134,7 +136,7 @@
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
 							on:click={() => {
 								if ($pause > 0) $pause = $pause - step;
 							}}
@@ -158,7 +160,7 @@
 				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
-					<div class="grow py-2 px-3">
+					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
 							Exhale ( seconds )
 						</span>
@@ -173,7 +175,7 @@
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
 							on:click={() => {
 								if ($exhale >= 1) $exhale = $exhale - step;
 							}}
@@ -197,7 +199,7 @@
 				class="bg-white border border-gray-200 md:rounded-lg dark:bg-slate-900 dark:border-gray-700"
 			>
 				<div class="w-full flex justify-between items-center gap-x-1">
-					<div class="grow py-2 px-3">
+					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 dark:text-gray-400 text-sm md:text-base">
 							Pause after exhale ( seconds )
 						</span>
@@ -212,7 +214,7 @@
 					>
 						<button
 							type="button"
-							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
+							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-800 dark:text-white dark:hover:bg-gray-700"
 							on:click={() => {
 								if ($endPause > 0) $endPause = $endPause - step;
 							}}
