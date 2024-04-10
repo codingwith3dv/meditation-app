@@ -67,7 +67,7 @@
 	<div class="w-full h-fit bg-primary/5 py-2 md:py-4 px-4 md:px-6">
 		<button
 			type="button"
-			class="py-3 px-3 w-full mb-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
+			class="md:hidden py-3 px-3 w-full mb-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
 			on:click={() => {
 				$isOverlayOpen = true;
 			}}
