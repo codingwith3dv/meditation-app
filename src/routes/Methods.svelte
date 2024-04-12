@@ -12,6 +12,14 @@
 
 	let methods = [
 		{
+			name: 'Resonant breath',
+			timing: [5.5, 0, 5.5, 0]
+		},
+		{
+			name: 'Paced breath',
+			timing: [4, 4, 6, 2]
+		},
+		{
 			name: 'Stress relief',
 			timing: [4, 7, 8, 0.5]
 		},
