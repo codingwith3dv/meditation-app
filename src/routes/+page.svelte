@@ -4,10 +4,10 @@
 	import Methods from './Methods.svelte';
 	import { setContext } from 'svelte';
 
-	const inhale = writable(4);
-	const pause = writable(7);
-	const exhale = writable(8);
-	const endPause = writable(0.5);
+	const inhale = writable(5.5);
+	const pause = writable(0);
+	const exhale = writable(5.5);
+	const endPause = writable(0);
 
 	const isPlaying = writable(false);
 	const isOverlayOpen = writable(false);
