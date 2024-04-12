@@ -69,7 +69,7 @@
 	<div class="w-full h-fit bg-primary/5 py-2 md:py-4 px-4 md:px-6">
 		<button
 			type="button"
-			class="md:hidden py-3 px-3 w-full mb-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
+			class="md:hidden py-2 px-3 w-full mb-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
 			on:click={() => {
 				$isOverlayOpen = true;
 			}}
@@ -78,23 +78,17 @@
 		</button>
 		<div class="grid md:grid-cols-2 xl:grid-cols-4 md:gap-6 rounded-lg !overflow-hidden">
 			<!-- Inhale -->
-			<div
-				class="bg-white border border-gray-200 md:rounded-lg"
-			>
+			<div class="bg-white border border-gray-200 md:rounded-lg">
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 text-sm md:text-base">
-							Inhale ( seconds )
-						</span>
+						<span class="block text-gray-500 text-sm md:text-base"> Inhale ( seconds ) </span>
 						<input
 							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$inhale}
 						/>
 					</div>
-					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
-					>
+					<div class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200">
 						<button
 							type="button"
 							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -117,9 +111,7 @@
 				</div>
 			</div>
 			<!-- Inhale pause -->
-			<div
-				class="bg-white border border-gray-200 md:rounded-lg"
-			>
+			<div class="bg-white border border-gray-200 md:rounded-lg">
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 text-sm md:text-base">
@@ -131,9 +123,7 @@
 							bind:value={$pause}
 						/>
 					</div>
-					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
-					>
+					<div class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200">
 						<button
 							type="button"
 							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -156,23 +146,17 @@
 				</div>
 			</div>
 			<!-- Exhale -->
-			<div
-				class="bg-white border border-gray-200 md:rounded-lg"
-			>
+			<div class="bg-white border border-gray-200 md:rounded-lg">
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
-						<span class="block text-gray-500 text-sm md:text-base">
-							Exhale ( seconds )
-						</span>
+						<span class="block text-gray-500 text-sm md:text-base"> Exhale ( seconds ) </span>
 						<input
 							class="w-full p-0 bg-transparent border-0 text-gray-800 focus:ring-0"
 							type="number"
 							bind:value={$exhale}
 						/>
 					</div>
-					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
-					>
+					<div class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200">
 						<button
 							type="button"
 							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -195,9 +179,7 @@
 				</div>
 			</div>
 			<!-- Exhale pause -->
-			<div
-				class="bg-white border border-gray-200 md:rounded-lg"
-			>
+			<div class="bg-white border border-gray-200 md:rounded-lg">
 				<div class="w-full flex justify-between items-center gap-x-1">
 					<div class="grow py-1 px-3">
 						<span class="block text-gray-500 text-sm md:text-base">
@@ -209,9 +191,7 @@
 							bind:value={$endPause}
 						/>
 					</div>
-					<div
-						class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200"
-					>
+					<div class="flex flex-col -gap-y-px divide-y divide-gray-200 border-s border-gray-200">
 						<button
 							type="button"
 							class="size-7 inline-flex justify-center items-center gap-x-2 text-sm font-medium md:rounded-se-lg bg-gray-50 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
