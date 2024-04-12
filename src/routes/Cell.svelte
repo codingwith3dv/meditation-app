@@ -142,7 +142,7 @@
 	bind:this={cell}
 	class="bg-primary relative border border-primary/50 shadow-xl w-52 h-52 rounded-full grid place-items-center"
 >
-	<svg viewBox="0 0 120 120" class="absolute w-[calc(100%_+_4px)] h-[calc(100%_+_4px)]">
+	<svg viewBox="0 0 120 120" class="-rotate-90 absolute w-[calc(100%_+_4px)] h-[calc(100%_+_4px)]">
 		<circle
 			bind:this={outline}
 			cx="60"
