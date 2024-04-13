@@ -104,6 +104,15 @@
 		);
 	};
 
+	const pauseTl = () => {
+		tl?.pause();
+		sound.pause();
+	};
+	const resumeTl = () => {
+		tl?.resume();
+		sound.resume();
+	};
+
 	onMount(() => {
 		isMd = matches('(min-width: 768px)');
 
@@ -128,9 +137,9 @@
 		});
 		isPlaying.subscribe((v) => {
 			if (v) {
-				tl?.resume();
+				resumeTl();
 			} else {
-				tl?.pause();
+				pauseTl();
 			}
 		});
 	});
@@ -138,9 +147,18 @@
 
 <svelte:window on:resize={handleResize} />
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	bind:this={cell}
 	class="bg-primary relative border border-primary/50 shadow-xl w-52 h-52 rounded-full grid place-items-center"
+	on:click={() => {
+		if ($isPlaying) {
+			$isPlaying = false;
+		} else {
+			$isPlaying = true;
+		}
+	}}
 >
 	<svg viewBox="0 0 120 120" class="-rotate-90 absolute w-[calc(100%_+_4px)] h-[calc(100%_+_4px)]">
 		<circle

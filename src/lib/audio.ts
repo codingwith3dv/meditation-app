@@ -1,5 +1,6 @@
 export class BreathSound {
 	private context: AudioContext;
+	private started = false;
 
 	constructor() {
 		this.context = new AudioContext();
@@ -68,6 +69,8 @@ export class BreathSound {
 	}
 
 	public playBreathSound(duration: number = 4000, type: 'inhale' | 'exhale'): void {
+		this.started = true;
+
 		const breathBuffer = this.createBreathBuffer(duration, type);
 		const breathSource = this.context.createBufferSource();
 		breathSource.buffer = breathBuffer;
@@ -91,5 +94,13 @@ export class BreathSound {
 		// Start and stop the breath source
 		breathSource.start(this.context.currentTime);
 		breathSource.stop(this.context.currentTime + duration / 1000);
+	}
+
+	public pause() {
+		return this.context.suspend();
+	}
+
+	public resume() {
+		return this.context.resume();
 	}
 }
