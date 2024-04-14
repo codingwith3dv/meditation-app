@@ -43,10 +43,7 @@
 		tl = gsap.timeline({
 			repeat: -1,
 			repeatDelay: $endPause,
-			repeatRefresh: true,
-			onRepeat: () => {
-				if ($endPause >= threshold) currentMode = 'hold';
-			}
+			repeatRefresh: true
 		});
 		tl.to(cell, {});
 		tl.to(cell, {
@@ -86,10 +83,10 @@
 					sound.playBreathSound($exhale * 1000, 'exhale');
 				},
 				onComplete: () => {
-					if ($pause >= threshold) currentMode = 'hold';
+					if ($endPause >= threshold) currentMode = 'hold';
 				}
 			},
-			`+=${$pause}`
+			$inhale + $pause
 		);
 		tl.to(
 			outline,
