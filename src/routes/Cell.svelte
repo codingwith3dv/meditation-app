@@ -148,7 +148,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	bind:this={cell}
-	class="bg-primary relative border border-primary/50 shadow-xl w-52 h-52 rounded-full grid place-items-center"
+	class="bg-primary relative border border-primary/50 shadow-xl w-52 h-52 rounded-full grid place-items-center hover:cursor-pointer"
 	on:click={() => {
 		if ($isPlaying) {
 			$isPlaying = false;
