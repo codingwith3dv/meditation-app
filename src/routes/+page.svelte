@@ -3,6 +3,7 @@
 	import Cell from './Cell.svelte';
 	import Methods from './Methods.svelte';
 	import { setContext } from 'svelte';
+	import Timer from './Timer.svelte';
 
 	const inhale = writable(5.5);
 	const pause = writable(0);
@@ -40,6 +41,12 @@
 			<Methods></Methods>
 		</div>
 
+		<div
+			class="absolute top-4 right-4 rounded-full px-2 py-2 hidden md:block bg-gray-100 shadow-md"
+		>
+			<Timer />
+		</div>
+
 		<Cell {inhale} {exhale} {pause} {endPause} {isPlaying}></Cell>
 	</div>
 
@@ -67,15 +74,20 @@
 	</div>
 
 	<div class="w-full h-fit bg-primary/5 py-2 md:py-4 px-4 md:px-6">
-		<button
-			type="button"
-			class="md:hidden py-2 px-3 w-full mb-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
-			on:click={() => {
-				$isOverlayOpen = true;
-			}}
-		>
-			Choose method
-		</button>
+		<div class="flex flex-row gap-3 items-center mb-2">
+			<button
+				type="button"
+				class="md:hidden py-2 px-3 w-full inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:pointer-events-none"
+				on:click={() => {
+					$isOverlayOpen = true;
+				}}
+			>
+				Choose method
+			</button>
+			<div class="block md:hidden">
+				<Timer />
+			</div>
+		</div>
 		<div class="grid md:grid-cols-2 xl:grid-cols-4 md:gap-6 rounded-lg !overflow-hidden">
 			<!-- Inhale -->
 			<div class="bg-white border border-gray-200 md:rounded-lg">
