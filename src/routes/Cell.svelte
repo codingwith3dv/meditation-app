@@ -13,6 +13,7 @@
 	/** In seconds */
 	export let endPause: Writable<number>;
 	export let isPlaying: Writable<boolean>;
+	export let isFirstTime: Writable<boolean>;
 
 	let cell: HTMLDivElement;
 	let outline: SVGCircleElement;
@@ -101,13 +102,19 @@
 		);
 	};
 
+	/* In minutes */
+	let duration = 0;
+	let startDate = new Date();
 	const pauseTl = () => {
 		tl?.pause();
 		sound.pause();
+		duration = Math.round(((new Date().getTime() - startDate.getTime()) / 1000 / 60) * 10) / 10;
 	};
 	const resumeTl = () => {
 		tl?.resume();
 		sound.resume();
+		duration = 0;
+		startDate = new Date();
 	};
 
 	onMount(() => {
@@ -140,9 +147,52 @@
 			}
 		});
 	});
+
+	const showShareModal = () => {
+		// @ts-ignore
+		window?.HSOverlay.open(document.getElementById('hs-basic-modal'));
+	};
 </script>
 
 <svelte:window on:resize={handleResize} />
+
+<div
+	id="hs-basic-modal"
+	class="hs-overlay hs-overlay-backdrop-open:bg-primary/20 hidden pt-7 sm:max-w-xl sm:w-full px-3 sm:mx-auto w-full !h-fit fixed inset-x-0 bottom-2 sm:bottom-14 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+>
+	<div class="w-full">
+		<div class="flex mx-auto flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+			<div class="flex justify-between items-center py-3 px-4 border-b">
+				<h3 class="font-bold text-gray-800 text-2xl">
+					Congratulations, you meditated for {duration} minutes today.
+				</h3>
+				<button
+					type="button"
+					class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+					data-hs-overlay="#hs-basic-modal"
+				>
+					<span class="sr-only">Close</span>
+					<i class="ph ph-x grid place-items-center align-middle"></i>
+				</button>
+			</div>
+			<div class="p-4 space-y-4 overflow-y-auto">
+				<p class="mt-1 text-gray-800 text-lg">
+					Share this achievement with your friends and followers.
+				</p>
+				<a
+					id="share-on-x"
+					target="_blank"
+					href={'https://twitter.com/intent/tweet' +
+						`?text=${encodeURIComponent(`I meditated for ${duration} minutes today on meditation[.]deveshdas[.]com`)}`}
+					class="py-3 px-4 inline-flex align-middle items-center gap-x-2 text-sm text-black font-semibold rounded-lg border border-transparent bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:pointer-events-none"
+				>
+					<span class="block bottom-0.5 relative"> Share on </span>
+					<i class="ph ph-x-logo grid place-items-center align-middle text-xl"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -152,6 +202,10 @@
 	on:click={() => {
 		if ($isPlaying) {
 			$isPlaying = false;
+			if ($isFirstTime) {
+				showShareModal();
+				// $isFirstTime = false;
+			}
 		} else {
 			$isPlaying = true;
 		}

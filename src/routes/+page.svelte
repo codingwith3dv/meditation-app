@@ -11,6 +11,8 @@
 	const exhale = persisted('exhaleDuration', 5.5);
 	const endPause = persisted('exhalePauseDuration', 0);
 
+	const isFirstTime = persisted('isFirstTime', true);
+
 	const isPlaying = writable(false);
 	const isOverlayOpen = writable(false);
 
@@ -22,6 +24,7 @@
 	setContext('endPause', endPause);
 	setContext('isPlaying', isPlaying);
 	setContext('isOverlayOpen', isOverlayOpen);
+	setContext('isFirstTime', isFirstTime);
 </script>
 
 <div class="w-full h-full flex flex-col">
@@ -48,7 +51,7 @@
 			<Timer />
 		</div>
 
-		<Cell {inhale} {exhale} {pause} {endPause} {isPlaying}></Cell>
+		<Cell {inhale} {exhale} {pause} {endPause} {isPlaying} {isFirstTime}></Cell>
 	</div>
 
 	<div
