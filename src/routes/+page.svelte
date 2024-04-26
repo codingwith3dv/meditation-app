@@ -4,11 +4,12 @@
 	import Methods from './Methods.svelte';
 	import { setContext } from 'svelte';
 	import Timer from './Timer.svelte';
+	import { persisted } from 'svelte-persisted-store';
 
-	const inhale = writable(5.5);
-	const pause = writable(0);
-	const exhale = writable(5.5);
-	const endPause = writable(0);
+	const inhale = persisted('inhaleDuration', 5.5);
+	const pause = persisted('inhalePauseDuration', 0);
+	const exhale = persisted('exhaleDuration', 5.5);
+	const endPause = persisted('exhalePauseDuration', 0);
 
 	const isPlaying = writable(false);
 	const isOverlayOpen = writable(false);
