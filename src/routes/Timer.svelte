@@ -5,7 +5,8 @@
 	const isPlaying = getContext<Writable<boolean>>('isPlaying');
 
 	// Timer
-	let minutes: string | number = '10';
+	let minutesNum = 11;
+	let minutes: string | number = String(minutesNum);
 	let seconds: string | number = '00';
 	let timingFunc: ReturnType<typeof setInterval> | null;
 	function startTimer(duration: number) {
@@ -45,7 +46,7 @@
 			timingFunc = null;
 		}
 		$isPlaying = false;
-		minutes = '10';
+		minutes = String(minutesNum);
 		seconds = '00';
 	}
 	function resetTimer() {
@@ -53,7 +54,7 @@
 			clearInterval(timingFunc);
 			timingFunc = null;
 		}
-		minutes = '10';
+		minutes = String(minutesNum);
 		seconds = '00';
 	}
 </script>
@@ -69,7 +70,7 @@
 			if (timingFunc) {
 				stopTimer();
 			} else {
-				startTimer(60 * 10);
+				startTimer(60 * minutesNum);
 			}
 		}}
 	>
