@@ -106,6 +106,7 @@
 	/* In minutes */
 	let duration = 0;
 	let startDate = new Date();
+
 	const pauseTl = () => {
 		if (document.fullscreenElement) {
 			document.exitFullscreen();
@@ -116,9 +117,12 @@
 	};
 	const resumeTl = () => {
 		if (!document.fullscreenElement) {
-			body.requestFullscreen().catch((err) => {
-				alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-			});
+			document
+				.getElementsByTagName('body')[0]
+				.requestFullscreen()
+				.catch((err) => {
+					alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+				});
 		}
 		tl?.resume();
 		sound.resume();
@@ -164,7 +168,6 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
-<svelte:body bind:this={body} />
 
 <div
 	id="hs-basic-modal"
