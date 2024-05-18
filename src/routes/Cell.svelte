@@ -17,6 +17,7 @@
 
 	let cell: HTMLDivElement;
 	let outline: SVGCircleElement;
+	let body: HTMLBodyElement;
 
 	let tl: gsap.core.Timeline | null;
 
@@ -106,11 +107,19 @@
 	let duration = 0;
 	let startDate = new Date();
 	const pauseTl = () => {
+		if (document.fullscreenElement) {
+			document.exitFullscreen();
+		}
 		tl?.pause();
 		sound.pause();
 		duration = Math.round(((new Date().getTime() - startDate.getTime()) / 1000 / 60) * 10) / 10;
 	};
 	const resumeTl = () => {
+		if (!document.fullscreenElement) {
+			body.requestFullscreen().catch((err) => {
+				alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+			});
+		}
 		tl?.resume();
 		sound.resume();
 		duration = 0;
@@ -155,6 +164,7 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
+<svelte:body bind:this={body} />
 
 <div
 	id="hs-basic-modal"
